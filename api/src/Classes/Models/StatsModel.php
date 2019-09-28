@@ -21,5 +21,14 @@ class StatsModel
         return $query->fetchAll();
     }
 
+    public function getTeams()
+    {
+        $sql = 'SELECT `team_id`, `team_name`, `region` FROM `teams`;';
+        $query = $this->db->query($sql);
+        $query->execute();
+
+        return $query->fetchAll();
+    }
+
 
 }
