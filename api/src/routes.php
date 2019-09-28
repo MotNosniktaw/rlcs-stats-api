@@ -15,7 +15,7 @@ return function (App $app) {
         return $container->get('renderer')->render($response, 'index.phtml', $args);
     });
 
-    $app->get('/get-players', 'GetPlayerController');
+    $app->get('/get-players', 'GetPlayersController');
     $app->get('/get-teams', 'GetTeamsController');
 
 };

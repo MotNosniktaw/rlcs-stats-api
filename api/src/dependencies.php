@@ -1,5 +1,7 @@
 <?php
 
+use Api\Factories\GetPlayersControllerFactory;
+use Api\Factories\StatsModelFactory;
 use Slim\App;
 
 return function (App $app) {
@@ -22,7 +24,12 @@ return function (App $app) {
 
     $container['db'] = function ($container) {
         $dbconfig = $container->get('settings')['db-config'];
-        return new \PDO('mysql:host=' . $dbconfig['host'] . '; dbname=' . $dbconfig['dbname'], $dbconfig['user'], $dbconfig['password']);
+        $db = new \PDO('mysql:host=' . $dbconfig['host'] . '; dbname=' . $dbconfig['dbname'], $dbconfig['user'], $dbconfig['password']);
+        $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+        return $db;
     };
+
+    $container['StatsModel'] = new StatsModelFactory;
+    $container['GetPlayersController'] = new GetPlayersControllerFactory;
 
 };
