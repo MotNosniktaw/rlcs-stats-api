@@ -22,6 +22,6 @@ _id is an integer value that represents that player_
 	localhost:8080/get-player-info?player-id={id}
 
 ### Get All Seasons
-This command will return a JSON containing basic info for all stored teams
+This command will return a JSON containing info for all stored RLCS seasons
 
 	localhost:8080/get-seasons
