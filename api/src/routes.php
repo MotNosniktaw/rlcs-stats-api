@@ -17,5 +17,6 @@ return function (App $app) {
 
     $app->get('/get-players', 'GetPlayersController');
     $app->get('/get-teams', 'GetTeamsController');
+    $app->get('/get-player-info', 'GetPlayerInfoController');
 
 };

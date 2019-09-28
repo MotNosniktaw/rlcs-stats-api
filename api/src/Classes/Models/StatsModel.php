@@ -30,5 +30,14 @@ class StatsModel
         return $query->fetchAll();
     }
 
+    public function getPlayerInfo($id)
+    {
+        $query = $this->db->prepare('SELECT * FROM `players` WHERE `player_id` = :playerID;');
+        $query->bindParam('playerID', $id, \PDO::PARAM_INT);
+        $query->execute();
+
+        return $query->fetch();
+    }
+
 
 }

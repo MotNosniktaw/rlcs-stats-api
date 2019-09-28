@@ -1,5 +1,6 @@
 <?php
 
+use Api\Factories\GetPlayerInfoControllerFactory;
 use Api\Factories\GetPlayersControllerFactory;
 use Api\Factories\GetTeamsControllerFactory;
 use Api\Factories\StatsModelFactory;
@@ -32,6 +33,7 @@ return function (App $app) {
 
     $container['StatsModel'] = new StatsModelFactory;
     $container['GetPlayersController'] = new GetPlayersControllerFactory;
+    $container['GetPlayerInfoController'] = new GetPlayerInfoControllerFactory;
     $container['GetTeamsController'] = new GetTeamsControllerFactory;
 
 };
