@@ -2,14 +2,15 @@
 
 namespace Api\Factories;
 
-use Api\Controllers\GetPlayersController;
+use Api\Controllers\GetSeasonsController;
 use Psr\Container\ContainerInterface;
 
-class GetPlayersControllerFactory
+class GetSeasonsControllerFactory
 {
     public function __invoke(ContainerInterface $container)
     {
         $statsModel = $container->get('StatsModel');
-        return new GetPlayersController($statsModel);
+
+        return new GetSeasonsController($statsModel);
     }
 }

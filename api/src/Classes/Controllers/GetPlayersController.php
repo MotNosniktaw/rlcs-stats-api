@@ -2,6 +2,7 @@
 
 namespace Api\Controllers;
 
+use Api\Models\StatsModel;
 use Slim\Http\Request;
 use Slim\Http\Response;
 
@@ -9,7 +10,7 @@ class GetPlayersController
 {
     protected $statsModel;
 
-    public function __construct($statsModel)
+    public function __construct(StatsModel $statsModel)
     {
         $this->statsModel = $statsModel;
     }

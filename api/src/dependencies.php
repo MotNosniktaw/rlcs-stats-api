@@ -2,6 +2,7 @@
 
 use Api\Factories\GetPlayerInfoControllerFactory;
 use Api\Factories\GetPlayersControllerFactory;
+use Api\Factories\GetSeasonsControllerFactory;
 use Api\Factories\GetTeamsControllerFactory;
 use Api\Factories\StatsModelFactory;
 use Slim\App;
@@ -35,5 +36,6 @@ return function (App $app) {
     $container['GetPlayersController'] = new GetPlayersControllerFactory;
     $container['GetPlayerInfoController'] = new GetPlayerInfoControllerFactory;
     $container['GetTeamsController'] = new GetTeamsControllerFactory;
+    $container['GetSeasonsController'] = new GetSeasonsControllerFactory;
 
 };

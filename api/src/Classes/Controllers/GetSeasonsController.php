@@ -6,7 +6,7 @@ use Api\Models\StatsModel;
 use Slim\Http\Request;
 use Slim\Http\Response;
 
-class GetPlayerInfoController
+class GetSeasonsController
 {
     protected $statsModel;
 
@@ -17,11 +17,8 @@ class GetPlayerInfoController
 
     public function __invoke(Request $request, Response $response)
     {
-        $playerID = $request->getParam('player-id');
+        $data = $this->statsModel->getSeasons();
 
-        $data = $this->statsModel->getPlayerInfo($playerID);
-
-        return $response->withJson($data);
+        return $response->withJSON($data);
     }
-
 }
