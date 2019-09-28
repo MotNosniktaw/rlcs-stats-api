@@ -1,27 +1,23 @@
-# Slim Framework 3 Skeleton Application
+# Rocket League Stats API
 
-Use this skeleton application to quickly setup and start working on a new Slim Framework 3 application. This application uses the latest Slim 3 with the PHP-View template renderer. It also uses the Monolog logger.
 
-This skeleton application was built for Composer. This makes setting up a new Slim Framework application quick and easy.
+## Commands
 
-## Install the Application
+### Get All Players
+This command will return a JSON containing basic info for all stored players
 
-Run this command from the directory in which you want to install your new Slim Framework application.
+	localhost:8080/get-players
 
-    php composer.phar create-project slim/slim-skeleton [my-app-name]
 
-Replace `[my-app-name]` with the desired directory name for your new application. You'll want to:
+### Get All Teams
+This command will return a JSON containing basic info for all stored teams
 
-* Point your virtual host document root to your new application's `public/` directory.
-* Ensure `logs/` is web writeable.
+	localhost:8080/get-teams
 
-To run the application in development, you can run these commands 
+### Get Individual Player Info
+This command will return a JSON containing more detailed info for a specific player.
 
-	cd [my-app-name]
-	php composer.phar start
+_id is an integer value that represents that player_
 
-Run this command in the application directory to run the test suite
+	localhost:8080/get-player-info?player-id={id}
 
-	php composer.phar test
-
-That's it! Now go build something cool.
