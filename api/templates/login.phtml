@@ -26,13 +26,16 @@
         </style>
     </head>
     <body>
-        <h1>Slim</h1>
-        <div>a microframework for PHP</div>
+        <h1>RL-Stats</h1>
+        <p>Welcome to MotNos' first custom API! I like rocket league....</p>
+        <form action="./home" method="POST">
+            <label for="username">Username: </label>
+            <input type="text" id="username" name="user">
 
-        <?php if (isset($name)) : ?>
-            <h2>Hello <?= htmlspecialchars($name); ?>!</h2>
-        <?php else: ?>
-            <p>Try <a href="/get-player-info" name="player-id" value="2">SlimFramework</a></p>
-        <?php endif; ?>
+            <label for="password">Password: </label>
+            <input type="password" id="password" name="password">
+            <br>
+            <button class="btn">Submit!</button>
+        </form>
     </body>
 </html>

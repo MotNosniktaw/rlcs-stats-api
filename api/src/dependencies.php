@@ -1,5 +1,6 @@
 <?php
 
+use Api\Factories\DisplayLoginControllerFactory;
 use Api\Factories\GetPlayerInfoControllerFactory;
 use Api\Factories\GetPlayersControllerFactory;
 use Api\Factories\GetSeasonsControllerFactory;
@@ -39,4 +40,5 @@ return function (App $app) {
     $container['GetTeamsController'] = new GetTeamsControllerFactory;
     $container['GetTeamInfoController'] = new GetTeamInfoControllerFactory;
     $container['GetSeasonsController'] = new GetSeasonsControllerFactory;
+    $container['DisplayLoginController'] = new DisplayLoginControllerFactory;
 };
