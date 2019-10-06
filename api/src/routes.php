@@ -14,9 +14,10 @@ return function (App $app) {
     $app->get('/get-team-info', 'GetTeamInfoController');
 
     $app->get('/', DisplayLoginController);
-    $app->post('/home', DisplayHomeController);
+    $app->get('/home', DisplayHomeController);
 
     $app->post('/login', 'LoginController');
+    $app->post('/new-user', 'NewUserController');
     $app->post('/update-goals', 'UpdateGoalsController');
     $app->post('/update-assists', 'UpdateAssistsController');
     $app->post('/update-saves', 'UpdateSavesController');

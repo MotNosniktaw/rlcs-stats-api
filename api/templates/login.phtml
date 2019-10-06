@@ -4,6 +4,8 @@
         <meta charset="utf-8"/>
         <title>Slim 3</title>
         <link href='//fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
+        
+        <script defer src="./js/newUser.js"></script>
         <script defer src="./js/login.js"></script>
         <style>
             body {
@@ -29,14 +31,15 @@
     <body>
         <h1>RL-Stats</h1>
         <p>Welcome to MotNos' first custom API! I like rocket league....</p>
-        <form id="login-form" action="./home" method="post">
+        <form id="login-form">
             <label for="username">Username: </label>
             <input type="text" id="username" name="user">
 
             <label for="password">Password: </label>
             <input type="password" id="password" name="password">
             <br>
-            <button class="btn">Submit!</button>
+            <button id="login-button" class="btn">Submit!</button>
+            <button id="new-user-button">Add New User?</button>
         </form>
         <p id="login-response"></p>
     </body>

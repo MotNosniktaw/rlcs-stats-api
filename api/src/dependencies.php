@@ -7,6 +7,7 @@ use Api\Factories\GetSeasonsControllerFactory;
 use Api\Factories\GetTeamInfoControllerFactory;
 use Api\Factories\GetTeamsControllerFactory;
 use Api\Factories\LoginControllerFactory;
+use Api\Factories\NewUserControllerFactory;
 use Api\Factories\StatsModelFactory;
 use Api\Factories\UserModelFactory;
 use Slim\App;
@@ -45,4 +46,5 @@ return function (App $app) {
     $container['GetSeasonsController'] = new GetSeasonsControllerFactory;
     $container['DisplayLoginController'] = new DisplayLoginControllerFactory;
     $container['LoginController'] = new LoginControllerFactory;
+    $container['NewUserController'] = new NewUserControllerFactory;
 };
