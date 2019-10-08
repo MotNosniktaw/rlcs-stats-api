@@ -7,8 +7,14 @@ use Slim\Http\Response;
 return function (App $app) {
     $container = $app->getContainer();
 
-    $app->get('/get-players', 'GetPlayersController');
-    $app->get('/get-teams', 'GetTeamsController');
+    $app->get('/players', 'GetPlayersController');
+    $app->post('/players', 'AddPlayerController');
+    $app->put('/players', 'UpdatePlayerController');
+
+    $app->get('/teams', 'GetTeamsController');
+    $app->post('/teams', 'AddTeamController');
+    $app->put('/teams', 'UpdateTeamController');
+
     $app->get('/get-player-info', 'GetPlayerInfoController');
     $app->get('/get-seasons', 'GetSeasonsController');
     $app->get('/get-team-info', 'GetTeamInfoController');
@@ -18,8 +24,4 @@ return function (App $app) {
 
     $app->post('/login', 'LoginController');
     $app->post('/new-user', 'NewUserController');
-    $app->post('/update-goals', 'UpdateGoalsController');
-    $app->post('/update-assists', 'UpdateAssistsController');
-    $app->post('/update-saves', 'UpdateSavesController');
-
 };

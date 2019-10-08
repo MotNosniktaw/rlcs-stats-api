@@ -21,11 +21,9 @@ class LoginController
         $user = $postData['user'];
         $password = $postData['password'];
 
-        $_SESSION = false;
         $data['success'] = false;
 
         if ($this->userModel->verifyLogin($user, $password)){
-            $_SESSION['loggedIn'] = true;
             $data['success'] = true;
         }
 

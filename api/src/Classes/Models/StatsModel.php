@@ -2,6 +2,9 @@
 
 namespace Api\Models;
 
+use Api\Entities\PlayerEntity;
+use Api\Entities\TeamEntity;
+
 class StatsModel
 {
     protected $db;
@@ -19,6 +22,24 @@ class StatsModel
         $query->execute();
 
         return $query->fetchAll();
+    }
+
+    public function addPlayer(PlayerEntity $player)
+    {
+        $sql = 'INSERT INTO `players`(`player_name`, `team`) VALUES (:name, :team);';
+        $query = $this->db->prepare($sql);
+        $query->bindParam('name', $player->getName(), PDO::PARAM_STR);
+        $query->bindParam('team', $player->getTeam(), PDO::PARAM_INT);
+        return $query->execute();
+    }
+
+    public function addTeam(TeamEntity $team)
+    {
+        $sql = 'INSERT INTO `teams`(`team_name`, `region`) VALUES (:name, :region);';
+        $query = $this->db->prepare($sql);
+        $query->bindParam('name', $team->getName(), PDO::PARAM_STR);
+        $query->bindParam('team', $team->getRegion(), PDO::PARAM_STR);
+        $query->execute();
     }
 
     public function getTeams()
