@@ -18,12 +18,13 @@ class AddTeamController
 
     public function __invoke(Request $request, Response $response)
     {
-        $data = [
-            'success' = false,
-            'msg' = 'It no work!',
-            'code' = 400
-        ];
-        $team = new TeamEntity($request['name'], $request['region']);
+        $data['success'] = false;
+        $data['msg'] = 'It no work!';
+        $data['code'] = 400;
+
+        $params = $request->getParsedBody();
+
+        $team = new TeamEntity($params['name'], $params['region']);
         $result = $this->statsModel->addTeam($team);
 
         if ($result) {

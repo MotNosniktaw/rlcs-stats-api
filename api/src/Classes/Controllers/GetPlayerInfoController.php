@@ -15,9 +15,10 @@ class GetPlayerInfoController
         $this->statsModel = $statsModel;
     }
 
-    public function __invoke(Request $request, Response $response)
+    public function __invoke(Request $request, Response $response, array $args)
     {
-        $playerID = $request->getParam('player-id');
+
+        $playerID = $args['id'];
 
         $data = $this->statsModel->getPlayerInfo($playerID);
 

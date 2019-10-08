@@ -18,12 +18,13 @@ class AddPlayerController
 
     public function __invoke(Request $request, Response $response)
     {
-        $data = [
-            'success' = false,
-            'msg' = 'It no work!',
-            'code' = 400
-        ];
-        $player = new PlayerEntity($request['name'], $request['team']);
+        $data['success'] = false;
+        $data['msg'] = 'It no work!';
+        $data['code'] = 400;
+
+        $params = $request->getParsedBody();
+
+        $player = new PlayerEntity($params['name'], $params['team']);
         $result = $this->statsModel->addPlayer($player);
 
         if ($result) {

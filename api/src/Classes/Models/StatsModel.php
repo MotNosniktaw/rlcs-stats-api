@@ -28,8 +28,8 @@ class StatsModel
     {
         $sql = 'INSERT INTO `players`(`player_name`, `team`) VALUES (:name, :team);';
         $query = $this->db->prepare($sql);
-        $query->bindParam('name', $player->getName(), PDO::PARAM_STR);
-        $query->bindParam('team', $player->getTeam(), PDO::PARAM_INT);
+        $query->bindParam('name', $player->getName(), \PDO::PARAM_STR);
+        $query->bindParam('team', $player->getTeam(), \PDO::PARAM_INT);
         return $query->execute();
     }
 
@@ -37,9 +37,9 @@ class StatsModel
     {
         $sql = 'INSERT INTO `teams`(`team_name`, `region`) VALUES (:name, :region);';
         $query = $this->db->prepare($sql);
-        $query->bindParam('name', $team->getName(), PDO::PARAM_STR);
-        $query->bindParam('team', $team->getRegion(), PDO::PARAM_STR);
-        $query->execute();
+        $query->bindParam('name', $team->getName(), \PDO::PARAM_STR);
+        $query->bindParam('region', $team->getRegion(), \PDO::PARAM_STR);
+        return $query->execute();
     }
 
     public function getTeams()

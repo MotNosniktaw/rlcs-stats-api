@@ -15,9 +15,9 @@ class GetTeamInfoController
         $this->statsModel = $statsModel;
     }
 
-    public function __invoke(Request $request, Response $response)
+    public function __invoke(Request $request, Response $response, array $args)
     {
-        $teamID = $request->getParam('team-id');
+        $teamID = $args['id'];
         $data = [];
         $data['team'] = $this->statsModel->getTeamInfo($teamID);
         $data['players'] = $this->statsModel->getPlayersByTeam($teamID);
